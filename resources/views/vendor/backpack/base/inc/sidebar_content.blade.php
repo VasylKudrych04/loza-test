@@ -3,3 +3,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Users</a></li>
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('message') }}'><i class='nav-icon la la-comment-alt'></i> Messages</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('subscriber') }}'><i class='nav-icon la la-users'></i> Subscribers</a></li>
