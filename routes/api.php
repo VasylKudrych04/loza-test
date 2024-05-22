@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/webhook/{token}', 'TelegramController@webhook');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::post('/send/{message}', 'TelegramController@send');
 });
 
-Route::post('/webhook', 'TelegramController@webhook');
+
