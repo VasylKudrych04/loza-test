@@ -19,4 +19,5 @@ Route::group([
     Route::crud('user', 'UserCrudController');
     Route::crud('message', 'MessageCrudController');
     Route::crud('subscriber', 'SubscriberCrudController');
+    Route::get('message/{message}/send', 'MessageCrudController@send')->name('sendMessage');
 }); // this should be the absolute last line of this file

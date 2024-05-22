@@ -3,7 +3,10 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Subscriber
@@ -11,17 +14,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $name
  * @property string $chat_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber query()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber whereChatId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscriber whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Subscriber newModelQuery()
+ * @method static Builder|Subscriber newQuery()
+ * @method static Builder|Subscriber query()
+ * @method static Builder|Subscriber whereChatId($value)
+ * @method static Builder|Subscriber whereCreatedAt($value)
+ * @method static Builder|Subscriber whereId($value)
+ * @method static Builder|Subscriber whereName($value)
+ * @method static Builder|Subscriber whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class Subscriber extends Model
 {
