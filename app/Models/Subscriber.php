@@ -29,6 +29,22 @@ class Subscriber extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function create($chatId, $name)
+    {
+        $existing = Subscriber::where(['chat_id' => $chatId])->first();
+
+        if (!$existing) {
+            $subscriber = new Subscriber();
+
+            $subscriber
+                ->fill([
+                    'chat_id' => $chatId,
+                    'name' => $name
+                ])
+                ->save();
+        }
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
